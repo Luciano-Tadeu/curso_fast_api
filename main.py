@@ -12,6 +12,8 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 app = FastAPI()
 
 bcrypt_context = CryptContext(schemes=["bcrypt"], deprecated='auto')
+ALGORITHM = os.getenv("ALGORITHM")
+ACESS_TOKEN_EXPIRE_MINUTES = int(os.getenv("ACESS_TOKEN_EXPIRE_MINUTES"))
 
 from auth_routes import auth_router
 from order_routes import order_router
